@@ -16,6 +16,7 @@ use App\Http\Controllers\MemberController;
 */
 
 Route::get('/', [MemberController::class, 'index'])->name('index');
+Route::get('/viewMember/{id}', [MemberController::class, 'show'])->name('functions.showMember');
 Route::get('/createMember', [MemberController::class, 'create'])->name('functions.createMember');
 Route::post('/addNewMember', [MemberController::class, 'store'])->name('addNewMember');
 Route::get('/editMember/{id}', [MemberController::class, 'edit'])->name('functions.editMember');

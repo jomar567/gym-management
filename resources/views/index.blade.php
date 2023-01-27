@@ -58,7 +58,7 @@
                                             <td>{{ $member->trainer->specialization }}</td>
                                             <td>{{ $member->membership->membership_type }}</td>
                                             <td class="d-flex flex-row gap-2 justify-content-center align-items-center">
-                                                {{-- <a href={{ route('functions.showMember', $member->id) }} class="btn btn-secondary">View</a> --}}
+                                                <a href={{ route('functions.showMember', $member->id) }} class="btn btn-secondary">View</a>
                                                 <a href={{ route('functions.editMember', $member->id) }} class="btn btn-primary">Edit</a>
                                                 <form action={{ route('destroy', $member->id) }} method="POST" class="d-inline-block">
                                                     @csrf
