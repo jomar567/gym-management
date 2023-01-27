@@ -60,16 +60,16 @@
                                             <td class="d-flex flex-row gap-2 justify-content-center align-items-center">
                                                 {{-- <a href={{ route('functions.showMember', $member->id) }} class="btn btn-secondary">View</a> --}}
                                                 <a href={{ route('functions.editMember', $member->id) }} class="btn btn-primary">Edit</a>
-                                                {{-- <form action={{ route('destroy', $member->id) }} method="POST" class="d-inline-block">
+                                                <form action={{ route('destroy', $member->id) }} method="POST" class="d-inline-block">
                                                     @csrf
                                                     <button class="btn btn-danger">Delete</button>
-                                                </form> --}}
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="6" class="text-center">
+                                        <td colspan="8" class="text-center">
                                             No Member Available
                                         </td>
                                     </tr>
@@ -103,7 +103,7 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="6" class="text-center">
+                                        <td colspan="5" class="text-center">
                                             No Member Available
                                         </td>
                                     </tr>
@@ -133,7 +133,7 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="6" class="text-center">
+                                        <td colspan="3" class="text-center">
                                             No Member Available
                                         </td>
                                     </tr>

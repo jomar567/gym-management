@@ -20,6 +20,4 @@ Route::get('/createMember', [MemberController::class, 'create'])->name('function
 Route::post('/addNewMember', [MemberController::class, 'store'])->name('addNewMember');
 Route::get('/editMember/{id}', [MemberController::class, 'edit'])->name('functions.editMember');
 Route::post('/update/{id}', [MemberController::class, 'update'])->name('update');
-
-
-
+Route::post('/destroy/{id}', [MemberController::class, 'destroy'])->name('destroy');

@@ -37,12 +37,14 @@ class MemberController extends Controller
         return redirect()->route('index')->with('success', 'New Member added!');
     }
 
+    //Edit Form
     public function edit($id)
     {
         $member = Member::findOrFail($id);
         return view('functions.member.editMember')->with('member', $member);
     }
 
+    //Update Member
     public function update(Request $request)
     {
         $member = Member::findOrFail($request->id);
@@ -54,6 +56,15 @@ class MemberController extends Controller
         $member->save();
 
         return redirect()->route('index')->with('success', 'Member ' . $request->name . ' has been updated');
+    }
+
+    //Delete Member
+    public function destroy(Request $request)
+    {
+        $member = Member::findOrFail($request->id);
+        $member->delete();
+
+        return redirect()->route('index')->with('success-delete', 'Member has been deleted');
     }
 
 }

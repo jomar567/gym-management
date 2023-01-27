@@ -20,18 +20,18 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <label for="email" class="form-label">
-                                            Member Email
-                                        </label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
                                         <label for="name" class="form-label">
                                             Member Name
                                         </label>
                                         <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">
+                                            Member Email
+                                        </label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
                                 </div>
                             </div>
