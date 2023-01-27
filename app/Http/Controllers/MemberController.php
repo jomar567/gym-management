@@ -18,6 +18,13 @@ class MemberController extends Controller
         ->with('memberships', $membership);
     }
 
+    //Show Member
+    public function show($id)
+    {
+        $member = Member::findOrFail($id);
+        return view('functions.member.showMember')->with('member', $member);
+    }
+
     //New Member Form
     public function create() {
         return view('functions.member.createMember');
