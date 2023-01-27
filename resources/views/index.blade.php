@@ -2,11 +2,6 @@
 
 @section('content')
     <div class="pt-5 w-100">
-        <div class="row position-relative">
-            {{-- <a href={{ route('functions.createMember') }}>
-                <button class="btn btn-md btn-primary px-4 float-end mb-3">New Member</button>
-            </a> --}}
-        </div>
         @if (session('success'))
             <div class="my-3 alert alert-success" role="alert">
                 {{ session('success') }}
@@ -32,6 +27,11 @@
                 </nav>
                <div class="tab-content">
                   <div class="tab-pane fade active show" id="members" role="tabpanel">
+                    <div class="row position-relative">
+                        <a href={{ route('functions.createMember') }}>
+                            <button class="btn btn-md btn-primary px-4 float-end mb-3">New Member</button>
+                        </a>
+                    </div>
                     <div class="overflow-auto">
                         <table class="table table-light table-striped shadow">
                             <thead>
