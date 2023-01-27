@@ -43,15 +43,23 @@
                             </div>
                             <div class="mb-3">
                                 <label for="trainer_id" class="form-label">
-                                    Trainer ID
+                                    Trainer
                                 </label>
-                                <input type="trainer_id" class="form-control" id="trainer_id" name="trainer_id" required>
+                                <select class="form-select" name="trainer_id">
+                                    @foreach ($trainers as $trainer)
+                                        <option value="{{ $trainer->id }}">{{ $trainer->name }} | {{ $trainer->specialization }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="membership_id" class="form-label">
-                                    Membership ID
+                                    Membership
                                 </label>
-                                <input type="membership_id" class="form-control" id="membership_id" name="membership_id" required>
+                                <select class="form-select" name="membership_id">
+                                    @foreach ($memberships as $membership)
+                                        <option value="{{ $membership->id }}">{{ $membership->membership_type }} | {{ $membership->membership_price }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

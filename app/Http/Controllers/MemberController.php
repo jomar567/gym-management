@@ -27,7 +27,11 @@ class MemberController extends Controller
 
     //New Member Form
     public function create() {
-        return view('functions.member.createMember');
+        $trainers = Trainer::all();
+        $memberships = Membership::all();
+        return view('functions.member.createMember')
+            ->with('trainers', $trainers)
+            ->with('memberships', $memberships);
     }
 
     //Create New Member
@@ -48,7 +52,11 @@ class MemberController extends Controller
     public function edit($id)
     {
         $member = Member::findOrFail($id);
-        return view('functions.member.editMember')->with('member', $member);
+        $trainers = Trainer::all();
+        $memberships = Membership::all();
+        return view('functions.member.editMember')->with('member', $member)
+            ->with('trainers', $trainers)
+            ->with('memberships', $memberships);;
     }
 
     //Update Member
