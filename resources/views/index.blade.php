@@ -122,7 +122,43 @@
                     </div>
                   </div>
                   <div class="tab-pane fade" id="memberships" role="tabpanel">
-                     <h5>Membership</h5>
+                    <div class="overflow-auto">
+                        <table class="table table-light table-striped shadow">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Membership Type</th>
+                                    <th>Membership Price</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                                @if(count($memberships) > 0)
+                                    @foreach($memberships as $membership)
+                                        <tr>
+                                            <th scope="row">{{ $membership->id }}</th>
+                                            <td>{{ $membership->membership_type }}</td>
+                                            <td>{{ $membership->membership_price }}</td>
+                                            <td class="d-flex flex-row gap-2 justify-content-center align-items-center">
+                                                {{-- <a href={{ route('functions.showMember', $member->id) }} class="btn btn-secondary">View</a> --}}
+                                                {{-- <a href={{ route('functions.editMember', $member->id) }} class="btn btn-primary">Edit</a>
+                                                <form action={{ route('destroy', $member->id) }} method="POST" class="d-inline-block">
+                                                    @csrf
+                                                    <button class="btn btn-danger">Delete</button>
+                                                </form> --}}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <tr>
+                                        <td colspan="6" class="text-center">
+                                            No Member Available
+                                        </td>
+                                    </tr>
+                                @endif
+                            </tbody>
+                        </table>
+                    </div>
                   </div>
                </div>
             </div>
