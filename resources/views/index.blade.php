@@ -59,8 +59,8 @@
                                             <td>{{ $member->membership->membership_type }}</td>
                                             <td class="d-flex flex-row gap-2 justify-content-center align-items-center">
                                                 {{-- <a href={{ route('functions.showMember', $member->id) }} class="btn btn-secondary">View</a> --}}
-                                                {{-- <a href={{ route('functions.editMember', $member->id) }} class="btn btn-primary">Edit</a>
-                                                <form action={{ route('destroy', $member->id) }} method="POST" class="d-inline-block">
+                                                <a href={{ route('functions.editMember', $member->id) }} class="btn btn-primary">Edit</a>
+                                                {{-- <form action={{ route('destroy', $member->id) }} method="POST" class="d-inline-block">
                                                     @csrf
                                                     <button class="btn btn-danger">Delete</button>
                                                 </form> --}}
@@ -88,7 +88,6 @@
                                     <th>Email</th>
                                     <th>Specialization</th>
                                     <th>Phone</th>
-                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
@@ -100,14 +99,6 @@
                                             <td>{{ $trainer->email }}</td>
                                             <td>{{ $trainer->specialization }}</td>
                                             <td>{{ $trainer->phone }}</td>
-                                            <td class="d-flex flex-row gap-2 justify-content-center align-items-center">
-                                                {{-- <a href={{ route('functions.showMember', $member->id) }} class="btn btn-secondary">View</a> --}}
-                                                {{-- <a href={{ route('functions.editMember', $member->id) }} class="btn btn-primary">Edit</a>
-                                                <form action={{ route('destroy', $member->id) }} method="POST" class="d-inline-block">
-                                                    @csrf
-                                                    <button class="btn btn-danger">Delete</button>
-                                                </form> --}}
-                                            </td>
                                         </tr>
                                     @endforeach
                                 @else
@@ -129,7 +120,6 @@
                                     <th>ID</th>
                                     <th>Membership Type</th>
                                     <th>Membership Price</th>
-                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
@@ -139,14 +129,6 @@
                                             <th scope="row">{{ $membership->id }}</th>
                                             <td>{{ $membership->membership_type }}</td>
                                             <td>{{ $membership->membership_price }}</td>
-                                            <td class="d-flex flex-row gap-2 justify-content-center align-items-center">
-                                                {{-- <a href={{ route('functions.showMember', $member->id) }} class="btn btn-secondary">View</a> --}}
-                                                {{-- <a href={{ route('functions.editMember', $member->id) }} class="btn btn-primary">Edit</a>
-                                                <form action={{ route('destroy', $member->id) }} method="POST" class="d-inline-block">
-                                                    @csrf
-                                                    <button class="btn btn-danger">Delete</button>
-                                                </form> --}}
-                                            </td>
                                         </tr>
                                     @endforeach
                                 @else

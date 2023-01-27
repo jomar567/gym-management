@@ -37,4 +37,23 @@ class MemberController extends Controller
         return redirect()->route('index')->with('success', 'New Member added!');
     }
 
+    public function edit($id)
+    {
+        $member = Member::findOrFail($id);
+        return view('functions.member.editMember')->with('member', $member);
+    }
+
+    public function update(Request $request)
+    {
+        $member = Member::findOrFail($request->id);
+        $member->name = $request->name;
+        $member->email = $request->email;
+        $member->membership_expiration = $request->membership_expiration;
+        $member->trainer_id = $request->trainer_id;
+        $member->membership_id = $request->membership_id;
+        $member->save();
+
+        return redirect()->route('index')->with('success', 'Member ' . $request->name . ' has been updated');
+    }
+
 }
