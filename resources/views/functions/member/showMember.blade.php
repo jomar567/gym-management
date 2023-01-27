@@ -26,8 +26,8 @@
 
                         <h5>Trainer Name: <span class="text-muted">{{ $member->trainer->name }}</span></h5>
                         <h5>Trainer Specialization: <span class="text-muted">{{ $member->trainer->specialization }}</span></h5>
-                        <h5>Trainer Specialization: <span class="text-muted">{{ $member->membership->membership_type }}</span></h5>
-                        <h5>Trainer Specialization: <span class="text-muted">{{ $member->membership->membership_price }}</span></h5>
+                        <h5>Membership Type: <span class="text-muted">{{ $member->membership->membership_type }}</span></h5>
+                        <h5>Membership Prize: <span class="text-muted">{{ $member->membership->membership_price }}</span></h5>
                     </div>
                 </div>
             </div>
