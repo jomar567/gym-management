@@ -27,15 +27,17 @@
                 </nav>
                <div class="tab-content">
                   <div class="tab-pane fade active show" id="members" role="tabpanel">
-                    <div class="row d-flex justify-content-between align-items-center">
-                        <a target="_blank" href="{{route('generate-pdf')}}">
-                            <button class="btn btn-primary btn-large">
-                                Download PDF
-                            </button>
-                        </a>
-                        <a href={{ route('functions.createMember') }}>
-                            <button class="btn btn-md btn-primary px-4 float-end mb-3">New Member</button>
-                        </a>
+                    <div class="row">
+                        <div class=" d-flex justify-content-between align-items-center">
+                            <a target="_blank" href="{{route('generate-pdf')}}">
+                                <button class="btn btn-primary btn-large px-4 mb-3">
+                                    Download PDF
+                                </button>
+                            </a>
+                            <a href={{ route('functions.createMember') }}>
+                                <button class="btn btn-md btn-primary px-4 mb-3">New Member</button>
+                            </a>
+                        </div>
                     </div>
                     <div class="overflow-auto">
                         <table class="table table-light table-striped shadow">
