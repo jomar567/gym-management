@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,18 @@ Route::post('/addNewMember', [MemberController::class, 'store'])->name('addNewMe
 Route::get('/editMember/{id}', [MemberController::class, 'edit'])->name('functions.editMember');
 Route::post('/update/{id}', [MemberController::class, 'update'])->name('update');
 Route::post('/destroy/{id}', [MemberController::class, 'destroy'])->name('destroy');
+
+//generate odf
+Route::get('/generate-pdf', function() {
+    $members = App\Models\Member::all();
+    $trainers = App\Models\Trainer::all();
+    $data = [
+        'members' => $members,
+        'trainers' => $trainers,
+    ];
+
+    $pdf = PDF::loadView('memberlist', $data);
+
+    return $pdf->stream('memberlist.pdf');
+
+})->name('generate-pdf');
